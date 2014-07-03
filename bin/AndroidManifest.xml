@@ -1,0 +1,54 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobilehci.palmtypingtest"
+    android:versionCode="5"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+    
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name">
+
+        <uses-library
+        android:name="com.google.android.glass"
+        android:required="true" />
+        
+<!--          <activity
+            android:name="com.mobilehci.palmtypingtest.LiveCardActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action
+                    android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+            <meta-data android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger_start" />
+        </activity>
+        <service android:name="com.mobilehci.palmtypingtest.LiveCardService"/>
+ -->
+
+	     <activity
+          android:name="com.mobilehci.palmtypingtest.LiveCardActivity"/>
+
+         <service
+			 android:name="com.mobilehci.palmtypingtest.LiveCardService"
+	         android:label="@string/app_name"
+	         android:icon="@drawable/ic_launcher"
+	         android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger_start" />
+        </service>
+        
+    </application>
+
+</manifest>
